@@ -8,7 +8,7 @@ import Roles from '../components/power/Roles.vue'
 
 const routes = [
   { path: '/', redirect: '/login' },
-  { path: '/login', component: Login },
+  { path: '/login', component: Login,meta:{title:'登录页面'} },
   {
     path: '/home', component: Home, redirect: '/home/welcome', children: [
       { path: 'welcome', component: Welcome,meta:{title:'欢迎您！'} },
