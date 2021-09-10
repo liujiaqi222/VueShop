@@ -11,16 +11,16 @@ const routes = [
   { path: '/login', component: Login },
   {
     path: '/home', component: Home, redirect: '/home/welcome', children: [
-      { path: 'welcome', component: Welcome },
-      { path: 'users', component: Users },
-      {path:'rights',component:Rights},
-      {path:'roles',component:Roles},
-      {path:'goods',component:Welcome},
-      {path:'params',component:Welcome},
-      {path:'categories',component:Welcome},
-      {path:'orders',component:Welcome},
-      {path:'reports',component:Welcome},
-      
+      { path: 'welcome', component: Welcome,meta:{title:'欢迎您！'} },
+      { path: 'users', component: Users ,meta:{title:'用户列表'}},
+      { path: 'rights', component: Rights,meta:{title:'角色列表'}},
+      { path: 'roles', component: Roles,meta:{title:'权限列表'} },
+      { path: 'goods', component: Welcome,meta:{title:'商品列表'}},
+      { path: 'params', component: Welcome,meta:{title:'分类参数'} },
+      { path: 'categories', component: Welcome ,meta:{title:'商品分类'}},
+      { path: 'orders', component: Welcome,meta:{title:'订单列表'} },
+      { path: 'reports', component: Welcome,meta:{title:'数据报表'} },
+
     ]
   }
 ];
@@ -29,6 +29,11 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 });
+
+router.beforeEach((to,from,next)=>{
+  document.title =`${to.meta.title} | 电商后台系统`;
+  next();
+})
 
 // 路由导航守卫
 router.beforeEach((to, from, next) => {
