@@ -7,7 +7,7 @@
       <el-breadcrumb-item>活动列表</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 🪧卡片视图区域 -->
-    <el-card ref="card">
+    <el-card>
       <div>
         <!-- 搜索区域 -->
         <el-row :gutter="20">
