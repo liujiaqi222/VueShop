@@ -274,11 +274,11 @@ let addFormRules = reactive({
     { min: 6, max: 16, message: "用户名长度在 6~16 个字符", trigger: "blur" },
   ],
   email: [
-    { required: true, message: "请输入密码", trigger: "blur" },
+    { required: true, message: "请输入邮箱", trigger: "blur" },
     { validator: checkEmail, trigger: "blur" },
   ],
   mobile: [
-    { required: true, message: "请输入密码", trigger: "blur" },
+    { required: true, message: "请输入手机号", trigger: "blur" },
     { validator: checkMobile, trigger: "blur" },
   ],
 });
